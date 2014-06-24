@@ -16,6 +16,7 @@ Contents:
    installation
    configurations
    commands
-   gitLab
+   branchingmodel
+   gitlab
    gitlabworkflow
    references
