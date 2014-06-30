@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-When We Git Together
-====================
+Practical guide for git users
+=============================================
 
-本文件旨於教導使用者學會操作Git與GitLab，對程式開發活動進行版本控制，以提高團隊之協作開發能力。
+本文件旨於教導使用者各種操作 Git 及 GitLab 的實務技巧，從基礎指令到分支策略皆有詳細介紹。希望透過此文件學習，能提高團隊協作開發之能力。
 
 Contents:
 
