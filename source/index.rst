@@ -17,6 +17,7 @@ Contents:
    configurations
    commands
    branchingmodel
+   rebase
    gitlab
    gitlabworkflow
    references
