@@ -9,3 +9,7 @@ pip install -r requirements.txt
 ```
 make html
 ```
+
+## Preview
+
+![Preview](./preview.png)
