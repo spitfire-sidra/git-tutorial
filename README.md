@@ -1,10 +1,10 @@
-## INSTALLATION
+## Installation
 
 ```
 pip install -r requirements.txt
 ```
 
-## USAGE
+## Usage
 
 ```
 make html
@@ -12,4 +12,4 @@ make html
 
 ## Preview
 
-![Preview](./preview.png)
+![preview](./preview.png)
