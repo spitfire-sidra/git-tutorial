@@ -1,3 +1,9 @@
+## Read it on readthedocs.org
+
+http://git-tutorial.readthedocs.org/en/latest/
+
+[Link](http://git-tutorial.readthedocs.org/en/latest/)
+
 ## Installation
 
 ```
