@@ -90,15 +90,15 @@ Git必懂指令
 同樣地，上述的指令結果在以下分點說明：
 
 #. ``git commit -m <此次提交的簡短說明>`` , 若不使用 ``-m`` 參數，則會以系統偏好使用的編輯器請使用者輸入此次提交的簡短說明，如以下訊息(第1行是讓使用者輸入說明的地方)： ::
-	
-	1 #                                                                             
+
+	1 #
 	2 # Please enter the commit message for your changes. Lines starting
 	3 # with '#' will be ignored, and an empty message aborts the commit.
 	4 # On branch master
 	5 # Changes to be committed:
 	6 #  (use "git reset HEAD <file>..." to unstage)
 
-#. ``[master (root-commit) 2ef8adc]`` 代表於 ``master`` 分支上提交變更，提交變更碼為 ``2ef8adc`` (簡短碼) 
+#. ``[master (root-commit) 2ef8adc]`` 代表於 ``master`` 分支上提交變更，提交變更碼為 ``2ef8adc`` (簡短碼)
 
 每一次的提交變更，都會有一筆日誌紀錄，如果要察看這些日誌紀錄，可以使用 ``git log`` 察看。 ::
 
@@ -159,7 +159,7 @@ Git必懂指令
 
 此處，我們將檔案加入 ``stage`` ，以觀察檔案狀態變化。 ::
 
-	$ git add HelloWorld.c 
+	$ git add HelloWorld.c
 	$ git status
 	# On branch master
 	# Changes to be committed:
@@ -181,7 +181,7 @@ Git必懂指令
 	$ git reset HEAD HelloWorld.c
 	Unstaged changes after reset:
 	M	HelloWorld.c
-	
+
 同樣使用 ``git status`` 察看檔案狀態，可以發現檔案回到 ``unstaged`` 狀態，如下所示。 ::
 
 	$ git status
@@ -244,13 +244,13 @@ Git必懂指令
 	* commit 19c3e6add40213002bcd46f2a5036f66ec5a0698
 	| Author: vans <vans@gmail.com>
 	| Date:   Tue Jul 16 09:36:14 2013 +0800
-	| 
+	|
 	|     bad.c added
-	|  
+	|
 	* commit 2ef8adccb61f46179f30ee017690519abb0b2c15
 	  Author: vans <vans@gmail.com>
 	  Date:   Mon Jul 15 16:56:57 2013 +0800
-	  
+
 	      The first commit of gittest project
 	$
 	$ ls
@@ -265,7 +265,7 @@ Git必懂指令
 	HelloWorld.c	README
 
 #. 使用 ``git status`` 可以發現檔案仍在 ``unstaged`` 仍可以回復 ::
-	
+
 	$ git status
 	# On branch master
 	# Changes not staged for commit:
@@ -321,7 +321,7 @@ Git必懂指令
 
 開發程式、系統時，難免會有利用設定檔管理的方式，此時設定檔中不免會存放帳號密碼等隱密資訊，如果不小心將這個設定檔加到版本控制中，即使將設定檔刪除，也會存在日誌檔中。此時最好的辦法就是將日誌中的相關紀錄也一併刪除，刪除的方法可以參考以下方法( ``git filter-branch`` , ``bfg`` )： ::
 
-	$ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch <YOUR_CONFIG>' --prune-empty --tag-name-filter cat -- --all 
+	$ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch <YOUR_CONFIG>' --prune-empty --tag-name-filter cat -- --all
 	$ git push origin master --force
 
 上述第2行指令將本地的日誌傳到遠端的儲存庫後，覆寫掉遠端儲存庫的日誌檔，確保不會有相關紀錄存在。
@@ -339,7 +339,7 @@ Git必懂指令
 
 多人合作開發模式中，會由Git Server提供中央的儲存庫(repository)儲存主線(master)，再由其他團隊成員複製(clone)主線到各自的開發環境中成為分支(branch)，在各自的環境內開發完成之後再將分支推送(push)回主線。如此重複循環作業。
 
-Git目前支援SSH, HTTP兩種協定進行網路協作。以SSH協定複製Git Server上專案的指令為 ``git clone <user@remoteserver:project>`` ，例如： :: 
+Git目前支援SSH, HTTP兩種協定進行網路協作。以SSH協定複製Git Server上專案的指令為 ``git clone <user@remoteserver:project>`` ，例如： ::
 
 	$ git clone git@10.2.0.15:project.git
 
@@ -348,7 +348,7 @@ Git目前支援SSH, HTTP兩種協定進行網路協作。以SSH協定複製Git S
 	$ git remote -v
 	origin	git@10.2.0.15:~git/repositories/vans/GitRepo.git (fetch)
 	origin	git@10.2.0.15:~git/repositories/vans/GitRepo.git (push)
-	$	
+	$
 	$ git remote show origin
 	* remote origin
 	  Fetch URL: git@10.2.0.15:~git/repositories/vans/GitRepo.git
@@ -364,7 +364,7 @@ Git目前支援SSH, HTTP兩種協定進行網路協作。以SSH協定複製Git S
 上述的結果中的 *fetch*, *push* 分別代表 *取得版本更新的位置* 與 *推送新版本的位置* 。
 
 若要新增遠端儲存庫，可使用 ``git remote add <shortname> <url>`` ，例如： ::
-	
+
 	$ git remote add pb git://github.com/paulboone/ticgit.git
 	$ git remote -v
 	origin  git://github.com/schacon/ticgit.git
@@ -416,7 +416,7 @@ Git目前支援SSH, HTTP兩種協定進行網路協作。以SSH協定複製Git S
 以下就是以指令更新版本的過程。 ::
 
 	$ git fetch origin master:tmp
-	$ git diff tmp 
+	$ git diff tmp
 	$ git merge tmp
 
 上述的第1個指令為更新遠端儲存庫(origin)至本地並且建立一新分支 ``tmp`` ；第2個指令為比較與 ``tmp`` 分支的差異；第3個為合併 ``tmp`` 分支。
@@ -451,7 +451,7 @@ Git目前支援SSH, HTTP兩種協定進行網路協作。以SSH協定複製Git S
 只要是有衝突存在的區域，都會以上述的格式表示。 ``<<<<<<<<<< HEAD`` 到 ``==========`` 就是我們所在的分支的檔案內容；而 ``==========`` 到 ``>>>>>>>>>>`` 則是要合併的分支內容。修正的方法為保留需要的部份即可，修正完成之後再提交變更後，測試程式運作沒問題的話，就可以推送至遠端儲存庫了。
 
 推送版本的過程中，可能也會有需要添加版本號的需求，因此可以為專案先貼上標籤。指令範例如下： ::
-	
+
 	$ git tag -a v0.1 -m 'my version 0.1'
 	$ git tag
 	v0.1
@@ -465,6 +465,40 @@ Git目前支援SSH, HTTP兩種協定進行網路協作。以SSH協定複製Git S
 此外，若要顯示指定標籤的訊息： ::
 
 	$ git show v0.1
+
+
+======================================
+多人合作開發模式 - 設定 upstream
+======================================
+
+除了上一章節提到的 `origin` 遠端儲存庫之外，有時候我們也會需要跟其他遠端儲存庫進行協作。最常見的就是 `fork` 別人的專案時，我們同時也希望可以把他們專案上面的程式碼變動，一併同步更新到我們本地端中，來保持我們本地端的程式是最新版的狀態。
+
+我們把這種情況稱為設定 `upstream` 。
+
+設定 `upstream` 其實就是增加一組遠端儲存庫的資訊而已。例如以下指令： ::
+
+	$ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+
+就可以在 `git remote -v` 中看到增加一組名為 `upstream` 的設定。 ::
+
+	$ git remote -v
+	# origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
+	# origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
+	# upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (fetch)
+	# upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
+
+接下來就可以用 `fetch`, `merge` 等指令來更新來自 `upstream` 的變動。
+
+例如： ::
+
+	$ git fetch upstream
+
+或者：
+
+	$ git merge upstream/master
+
+以上就是 `upstream` 的用法。
+
 
 ======================================
 多人合作開發模式 - 設定SSH金鑰認證
@@ -509,7 +543,7 @@ SSH Server端
 ------------------
 
 #. 將client端傳送過來的公鑰命名成 authorized_keys，並且放到該團隊所共用帳號的家目錄下的 ``.ssh`` 資料夾內 ::
-	
+
 	cat id_rsa.pub >> ~git/.ssh/authorized_keys
 
 #. 確認 ``/etc/ssh/sshd_config`` 有開啟以下選項，並重新啟動SSH Server ::
