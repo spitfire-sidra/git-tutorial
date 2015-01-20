@@ -230,4 +230,4 @@ Git也使用了多種不同的diff演算法，用來進行不同版本間的程�
 
 .. [#f1] `Ignoring files <https://help.github.com/articles/ignoring-files>`_ , https://help.github.com/articles/ignoring-files
 
-.. [#f2] `Customizing Git - Git Configuration <http://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration`_ , http://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+.. [#f2] `Customizing Git - Git Configuration <http://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration>`_ , http://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
