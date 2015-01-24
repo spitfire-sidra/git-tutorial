@@ -47,7 +47,7 @@ Git 的標籤分為 2 種，其分別為 lightweight 以及 annotated 。
 
    Git 官方文件推薦使用的標籤。 annotated 標籤則不像 lightweight 標籤，annotated 標籤在建立時也會同時儲存許多資訊，例如上標籤的日期、上標籤者的名字、標籤訊息以及 Checksum 等等，此外還可以加簽(sign)進行驗證。
 
-   annotated 標籤與 lightweight 標籤使用類似，但需要 2 個 ``-a <tag name>`` , ``-m <message>>`` ：
+   annotated 標籤與 lightweight 標籤使用類似，但需要 ``-a <tag name>`` , ``-m <message>`` 2 個參數，例如：
 
    ::
 
@@ -62,9 +62,9 @@ Git 的標籤分為 2 種，其分別為 lightweight 以及 annotated 。
 
 預設的標籤是加在當前的 commit，不過也可以為之前的 commit 上標籤，只要加上想加標籤的 commit 編號即可：
 
-   ::
+::
 
-        $ git tag -a '1.0.dev' 3b7de7f
+    $ git tag -a '1.0.dev' 3b7de7f
 
 -------------
 推送標籤
