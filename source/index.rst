@@ -18,6 +18,7 @@ Contents:
    commands
    branchingmodel
    rebase
+   tagging
    gitlab
    gitlabworkflow
    references
