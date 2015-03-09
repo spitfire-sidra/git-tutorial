@@ -392,6 +392,14 @@ Git目前支援SSH, HTTP兩種協定進行網路協作。以SSH協定複製Git S
 
 	$ git branch -d HellowWorld
 
+順帶一提，變更本地(local)分支的指令為 ``git branch -m <oldname> <newname>`` ，例如： ::
+
+    $ git branch -m HellowWorld HelloWorld
+
+如果你已經在想重新命名的分支內時，還可以簡化成 ``git branch -m <newname>`` ，例如： ::
+
+    $ git branch -m HelloWorld
+
 建立完分支之後，其實後續的作業模式就如同單人開發模式，唯一不同的是會在提交變更之後需要推送回遠端儲存庫，推送的指令為 ``git push <remote_branch_shortname> [local_branch]`` ，例如： ::
 
 	$ git push origin master
