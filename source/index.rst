@@ -17,6 +17,7 @@ Contents:
    configurations
    commands
    branchingmodel
+   conflict
    rebase
    tagging
    gitlab
