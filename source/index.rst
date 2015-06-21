@@ -22,4 +22,5 @@ Contents:
    tagging
    gitlab
    gitlabworkflow
+   other
    references
