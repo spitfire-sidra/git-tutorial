@@ -81,3 +81,17 @@ git 產生 patch 檔
 套用單個 patch 檔： ::
 
     $ git am 0001-added-conflict.rst.patch
+
+如果套用 patch 時有遇到 conflict 或是用以下幾個指令來解決：
+
+解決 conflict 後 ::
+
+    $ git am --continue
+
+或者不想解決 conflict 想直接跳過這個 patch ： ::
+
+    $ git am --skip
+
+又或者想乾脆放棄，直接回復原本的狀態： ::
+
+    $ git am --abort
