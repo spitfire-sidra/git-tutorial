@@ -43,14 +43,16 @@ git 產生 patch 檔
 
     $ git diff --staged > diff.patch
 
-套用 patch 檔指令： ::
+套用 patch 檔指令或者可使用 ``patch`` 指令： ::
 
     $ git apply diff.patch
+    or
+    $ patch -p0 < diff.patch # 回復可以用 patch -R -p0 < diff.patch
 
 套用 patch 檔之後，仍需要進行 add, commit 等動作， git 並不會自動幫我們 commit 。
 
 
-第 2 種產生 patch 檔的功能是用 ``git format-patch`` ，只要指定從哪個 commit id 之後產生 patch 即可，執行之後就會按照順序將一個個 commit 之間的差異產生 patch 檔： ::
+第 2 種產生 patch 檔的功能是用 ``git format-patch`` ，只要指定從哪個 commit id 之後產生 patch 即可，執行之後就會按照順序將一個個 commit 之間的差異產生 patch 檔，不過這種方式所產生的 patch 檔只有 git 能夠使用，必須注意： ::
 
     $ git format-patch <commit id>
 
